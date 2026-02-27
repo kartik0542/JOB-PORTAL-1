@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Left */}
         <div className="text-center md:text-left">
           <h2 className="text-lg font-bold">
-            Job <span className="text-[#F83002]">Hunt</span>
+            Job <span className="text-[#F83002]">Portal</span>
           </h2>
           <p className="text-sm text-gray-500">
             <span className="text-[#4309a7]">©</span> 2026 Your Company. All
