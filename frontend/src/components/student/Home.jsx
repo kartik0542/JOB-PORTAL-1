@@ -60,7 +60,8 @@ const Home = () => {
                   <span className="font-medium text-[#6A38C2]">
                     {missingFields.join(", ")}
                   </span>{" "}
-                  missing — help recruiters discover you faster.
+                  {missingFields.length === 1 ? "is" : "are"} missing — help
+                  recruiters discover you faster.
                 </p>
               </div>
             </div>
