@@ -9,7 +9,7 @@ import { USER_API_END_POINT } from "@/utils/constant";
 import { toast } from "sonner";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "@/redux/authSlice";
+import { setLoading, resetLoading } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
 
 const Signup = () => {
@@ -25,6 +25,11 @@ const Signup = () => {
   const { loading, user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // ✅ Page open hote hi loading reset
+  useEffect(() => {
+    dispatch(resetLoading());
+  }, []);
 
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });

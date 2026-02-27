@@ -19,7 +19,7 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-  blacklist: ["loading"], // ✅ loading persist nahi hoga
+  blacklist: ["auth"], // ✅ Pura auth persist mat karo
 };
 
 const authPersistConfig = {
