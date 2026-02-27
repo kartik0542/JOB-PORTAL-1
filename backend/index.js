@@ -27,6 +27,11 @@ app.use(
   }),
 );
 
+// Root route - UptimeRobot ke liye
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is running!" });
+});
+
 // api's
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
