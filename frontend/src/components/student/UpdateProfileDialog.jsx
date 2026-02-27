@@ -83,7 +83,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
   };
 
   return (
-    <Dialog open={open}>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent
         className="w-[95vw] max-w-lg rounded-xl p-5 md:p-6"
         onInteractOutside={() => setOpen(false)}
