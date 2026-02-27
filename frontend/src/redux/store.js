@@ -19,10 +19,17 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
+  blacklist: ["loading"], // ✅ loading persist nahi hoga
+};
+
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  blacklist: ["loading"], // ✅ auth me se loading exclude
 };
 
 const rootReducer = combineReducers({
-  auth: authSlice,
+  auth: persistReducer(authPersistConfig, authSlice), // ✅ auth alag persist
   job: jobSlice,
   company: companySlice,
   application: applicationSlice,
