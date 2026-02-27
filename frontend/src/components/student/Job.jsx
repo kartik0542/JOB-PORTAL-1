@@ -26,9 +26,9 @@ const Job = ({ job }) => {
             ? "Today"
             : `${daysAgoFunction(job?.createdAt)} days ago`}
         </p>
-        <Button variant="outline" className="rounded-full" size="icon">
+        {/* <Button variant="outline" className="rounded-full" size="icon">
           <Bookmark className="w-4 h-4" />
-        </Button>
+        </Button> */}
       </div>
 
       {/* Company Info */}
@@ -68,16 +68,16 @@ const Job = ({ job }) => {
         <Button
           onClick={() => navigate(`/jobs/description/${job?._id}`)}
           variant="outline"
-          className="flex-1 md:flex-none text-sm"
+          className="bg-white text-[#7209b7] flex-1 md:flex-none text-sm hover:bg-[#5f078f] hover:text-white"
         >
           Details
         </Button>
-        <Button
+        {/* <Button
           className="bg-[#7209b7] text-white flex-1 md:flex-none text-sm hover:bg-[#5f078f]"
           variant="outline"
         >
           Save For Later
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

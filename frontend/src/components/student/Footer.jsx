@@ -1,4 +1,4 @@
-import { FacebookIcon, TwitterIcon, LinkedinIcon } from "lucide-react";
+// import { FacebookIcon, TwitterIcon, LinkedinIcon } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         {/* Right - Social Icons */}
-        <div className="flex gap-6">
+        {/* <div className="flex gap-6">
           <a
             href="#"
             aria-label="Facebook"
@@ -38,7 +38,7 @@ const Footer = () => {
           >
             <LinkedinIcon size={19} />
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

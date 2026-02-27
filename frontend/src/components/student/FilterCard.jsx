@@ -21,10 +21,10 @@ const filterData = [
     filterType: "Industry",
     array: ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
   },
-  {
-    filterType: "Salary",
-    array: ["0-5 LPA", "5-15 LPA", "15-30 LPA"], 
-  },
+  // {
+  //   filterType: "Salary",
+  //   array: ["0-5 LPA", "5-15 LPA", "15-30 LPA"], 
+  // },
 ];
 
 const FilterCard = () => {
