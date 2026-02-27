@@ -19,7 +19,7 @@ const Navbar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.get(`${USER_API_END_POINT}/logout`, {
-        withCredential: true,
+        withCredentials: true,
       });
       if (res.data.success) {
         dispatch(setUser(null));

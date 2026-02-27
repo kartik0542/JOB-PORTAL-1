@@ -139,7 +139,6 @@ export const login = async (req, res) => {
         httpOnly: true,
         sameSite: "none",
         secure: true,
-        //sameSite: "lax",
         path: "/",
       })
       .json({
