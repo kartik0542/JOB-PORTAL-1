@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://job-portal-iota-red.vercel.app/",
+      "https://job-portal-iota-red.vercel.app",
     ],
     credentials: true,
   }),
