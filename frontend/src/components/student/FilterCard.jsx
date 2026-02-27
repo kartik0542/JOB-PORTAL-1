@@ -9,8 +9,7 @@ const filterData = [
   {
     filterType: "Location",
     array: [
-      "Delhi NCR",
-      "Bangalore",
+      "Delhi",
       "Hyderabad",
       "Pune",
       "Mumbai",
@@ -19,11 +18,17 @@ const filterData = [
   },
   {
     filterType: "Industry",
-    array: ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
+    array: [
+      "Frontend Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "Data science",
+      "MERN Stack developer",
+    ],
   },
   // {
   //   filterType: "Salary",
-  //   array: ["0-5 LPA", "5-15 LPA", "15-30 LPA"], 
+  //   array: ["0-5 LPA", "5-15 LPA", "15-30 LPA"],
   // },
 ];
 
