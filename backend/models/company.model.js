@@ -31,13 +31,6 @@ const companySchema = new mongoose.Schema(
       ref: "User", // recruiter
       required: true,
     },
-
-    // jobs: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Job",
-    //   },
-    // ],
   },
   { timestamps: true },
 );

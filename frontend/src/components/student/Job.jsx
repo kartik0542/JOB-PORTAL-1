@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { Bookmark } from "lucide-react";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import { useNavigate } from "react-router-dom";
@@ -26,9 +25,6 @@ const Job = ({ job }) => {
             ? "Today"
             : `${daysAgoFunction(job?.createdAt)} days ago`}
         </p>
-        {/* <Button variant="outline" className="rounded-full" size="icon">
-          <Bookmark className="w-4 h-4" />
-        </Button> */}
       </div>
 
       {/* Company Info */}
@@ -72,12 +68,6 @@ const Job = ({ job }) => {
         >
           Details
         </Button>
-        {/* <Button
-          className="bg-[#7209b7] text-white flex-1 md:flex-none text-sm hover:bg-[#5f078f]"
-          variant="outline"
-        >
-          Save For Later
-        </Button> */}
       </div>
     </div>
   );

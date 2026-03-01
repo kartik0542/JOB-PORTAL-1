@@ -26,10 +26,6 @@ const filterData = [
       "MERN Stack developer",
     ],
   },
-  // {
-  //   filterType: "Salary",
-  //   array: ["0-5 LPA", "5-15 LPA", "15-30 LPA"],
-  // },
 ];
 
 const FilterCard = () => {

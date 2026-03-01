@@ -144,11 +144,11 @@ export const getjobById = async (req, res) => {
 
 export const getAdminJobs = async (req, res) => {
   try {
-    // 🔹 Admin id JWT middleware se aa rahi hai
+    //  Admin id JWT middleware se aa rahi hai
     const adminId = req.id;
 
-    // 🔹 Sirf wahi jobs jo is admin ne create ki hain
-    // 🔹 Latest job upar dikhane ke liye sorting
+    //  Sirf wahi jobs jo is admin ne create ki hain
+    //  Latest job upar dikhane ke liye sorting
     const jobs = await Job.find({ created_by: adminId })
       .sort({
         createdAt: -1, // -1 => newest first, 1 => oldest first
