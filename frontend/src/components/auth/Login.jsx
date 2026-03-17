@@ -23,7 +23,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // ✅ Page open hote hi loading reset
+  // Page open hote hi loading reset
   useEffect(() => {
     dispatch(resetLoading());
   }, []);

@@ -26,7 +26,7 @@ const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // ✅ Page open hote hi loading reset
+  // Page open hote hi loading reset
   useEffect(() => {
     dispatch(resetLoading());
   }, []);
