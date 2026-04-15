@@ -2,7 +2,6 @@ import { Application } from "../models/application.model.js";
 import { Job } from "../models/job.model.js";
 import { User } from "../models/user.model.js";
 
-
 export const applyJob = async (req, res) => {
   try {
     const userId = req.id; // logged-in student
@@ -109,7 +108,6 @@ export const getAppliedJobs = async (req, res) => {
   }
 };
 
-
 // RECRUITER: GET APPLICATIONS FOR A JOB
 
 export const getApplicants = async (req, res) => {
@@ -161,7 +159,6 @@ export const getApplicants = async (req, res) => {
     });
   }
 };
-
 
 // RECRUITER: UPDATE APPLICATION STATUS
 

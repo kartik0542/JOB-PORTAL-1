@@ -11,13 +11,17 @@ const LatestJobCards = ({ job }) => {
     >
       {/* Company Info */}
       <div>
-        <h1 className="font-medium text-base md:text-lg">{job?.company?.name}</h1>
+        <h1 className="font-medium text-base md:text-lg">
+          {job?.company?.name}
+        </h1>
         <p className="text-sm text-gray-500">India</p>
       </div>
 
       {/* Job Title & Description */}
       <div className="mt-2">
-        <h1 className="font-bold text-base md:text-lg my-1 md:my-2">{job?.title}</h1>
+        <h1 className="font-bold text-base md:text-lg my-1 md:my-2">
+          {job?.title}
+        </h1>
         <p className="text-sm text-gray-600 line-clamp-2">{job?.description}</p>
       </div>
 

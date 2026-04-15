@@ -37,7 +37,7 @@ const CompaniesTable = () => {
     <div className="overflow-x-auto w-full">
       <Table className="min-w-125">
         <TableCaption className="text-sm text-gray-500 mb-2">
-          A list of your recent registered companies.
+          A list of your recent registered companies. 
         </TableCaption>
         <TableHeader>
           <TableRow className="bg-gray-50">

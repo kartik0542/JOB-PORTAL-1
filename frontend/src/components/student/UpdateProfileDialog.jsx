@@ -95,7 +95,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         </DialogHeader>
 
         <form onSubmit={submitHandler}>
-          <div className="grid gap-4 py-3">
+          <div className="grid gap-4 py-4">
             {/* Text Fields */}
             {fields.map(({ id, label, name, type }) => (
               <div

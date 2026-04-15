@@ -12,12 +12,11 @@ const Job = ({ job }) => {
     const createdAt = new Date(mongodbTime);
     const currentTime = new Date();
     const timeDifference = currentTime - createdAt;
-    return Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    return Math.floor(timeDifference / (1000 * 24 * 60 * 60));
   };
 
   return (
     <div className="p-4 md:p-5 rounded-md shadow-xl bg-white border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between h-full">
-      
       {/* Top Row - Date & Bookmark */}
       <div className="flex items-center justify-between">
         <p className="text-sm text-gray-500">
@@ -35,7 +34,9 @@ const Job = ({ job }) => {
           </Avatar>
         </Button>
         <div>
-          <h1 className="font-medium text-base md:text-lg">{job?.company?.name}</h1>
+          <h1 className="font-medium text-base md:text-lg">
+            {job?.company?.name}
+          </h1>
           <p className="text-sm text-gray-500">India</p>
         </div>
       </div>

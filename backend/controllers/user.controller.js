@@ -8,7 +8,6 @@ import cloudinary from "../utils/cloudinary.js";
 export const register = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, password, role } = req.body;
-    console.log(fullname, email, phoneNumber, password, role);
 
     // validation
     if (!fullname || !email || !phoneNumber || !password || !role) {
@@ -169,7 +168,6 @@ export const logout = async (req, res) => {
       message: "Logged out successfully",
       success: true,
     });
-
   } catch (error) {
     console.log(error);
     return res.status(500).json({

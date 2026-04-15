@@ -6,24 +6,42 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { SlidersHorizontal, X } from "lucide-react";
 
+// salary range parse karne ka helper
+const matchesSalary = (jobSalary, query) => {
+  if (query === "0-5 LPA") return jobSalary >= 0 && jobSalary <= 5;
+  if (query === "5-10 LPA") return jobSalary > 5 && jobSalary <= 10;
+  if (query === "10-20 LPA") return jobSalary > 10 && jobSalary <= 20;
+  if (query === "20+ LPA") return jobSalary > 20;
+  return false;
+};
+
+const salaryQueries = ["0-5 LPA", "5-10 LPA", "10-20 LPA", "20+ LPA"];
+
 const Jobs = () => {
   const { allJobs, searchedQuery } = useSelector((store) => store.job);
   const [filterJobs, setFilterJobs] = useState(allJobs);
-  const [showFilter, setShowFilter] = useState(false); // mobile filter drawer
+  const [showFilter, setShowFilter] = useState(false);
 
   useEffect(() => {
     if (!allJobs) return;
 
     if (searchedQuery) {
-      const filteredJobs = allJobs.filter(
-        (job) =>
-          job?.title?.toLowerCase().includes(searchedQuery.toLowerCase()) ||
-          job?.description
-            ?.toLowerCase()
-            .includes(searchedQuery.toLowerCase()) ||
-          job?.location?.toLowerCase().includes(searchedQuery.toLowerCase()),
-      );
-      setFilterJobs(filteredJobs);
+      // salary filter hai?
+      if (salaryQueries.includes(searchedQuery)) {
+        const filtered = allJobs.filter((job) =>
+          matchesSalary(job?.salary, searchedQuery),
+        );
+        setFilterJobs(filtered);
+      } else {
+        // location / industry filter
+        const filtered = allJobs.filter(
+          (job) =>
+            job?.title?.toLowerCase().includes(searchedQuery.toLowerCase()) ||
+            job?.description?.toLowerCase().includes(searchedQuery.toLowerCase()) ||
+            job?.location?.toLowerCase().includes(searchedQuery.toLowerCase()),
+        );
+        setFilterJobs(filtered);
+      }
     } else {
       setFilterJobs(allJobs);
     }
@@ -34,7 +52,7 @@ const Jobs = () => {
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-5">
-        {/* Mobile Filter Toggle Button */}
+        {/* Mobile Filter Toggle */}
         <div className="flex md:hidden justify-between items-center mb-3">
           <p className="text-sm text-gray-500">
             {filterJobs.length} jobs found
@@ -48,15 +66,13 @@ const Jobs = () => {
           </button>
         </div>
 
-        {/* Mobile Filter Drawer Overlay */}
+        {/* Mobile Drawer */}
         {showFilter && (
           <div className="fixed inset-0 z-50 flex md:hidden">
-            {/* Backdrop */}
             <div
               className="absolute inset-0 bg-black/40"
               onClick={() => setShowFilter(false)}
             />
-            {/* Drawer */}
             <div className="relative z-10 w-[80%] max-w-xs bg-white h-full overflow-y-auto p-4 shadow-xl">
               <div className="flex items-center justify-between mb-3">
                 <h2 className="font-bold text-lg">Filters</h2>

@@ -8,13 +8,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 const filterData = [
   {
     filterType: "Location",
-    array: [
-      "Delhi",
-      "Hyderabad",
-      "Pune",
-      "Mumbai",
-      "Ahmedabad",
-    ],
+    array: ["Delhi", "Hyderabad", "Pune", "Mumbai", "Ahmedabad"],
   },
   {
     filterType: "Industry",
@@ -25,6 +19,10 @@ const filterData = [
       "Data science",
       "MERN Stack developer",
     ],
+  },
+  {
+    filterType: "Salary",
+    array: ["0-5 LPA", "5-10 LPA", "10-20 LPA", "20+ LPA"],
   },
 ];
 

@@ -68,7 +68,7 @@ export const postJob = async (req, res) => {
   }
 };
 
-// Job list with search (title / description)
+// Job list with search (title / description) (student)
 
 export const getAllJobs = async (req, res) => {
   try {
@@ -108,9 +108,9 @@ export const getAllJobs = async (req, res) => {
   }
 };
 
-// Job details page ke liye
+// Job details page ke liye (student)
 
-export const getjobById = async (req, res) => {
+export const getJobById = async (req, res) => {
   try {
     // URL se job id le rahe hain
     const jobId = req.params.id;

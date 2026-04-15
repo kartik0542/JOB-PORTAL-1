@@ -3,10 +3,10 @@
 const Footer = () => {
   return (
     <footer className="border-t mt-10 md:mt-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 py-6 md:py-8 flex flex-col items-center justify-between gap-4">
         {/* Left */}
-        <div className="text-center md:text-left">
-          <h2 className="text-lg font-bold">
+        <div className="text-center">
+          <h2 className="text-xl font-bold">
             Job <span className="text-[#F83002]">Portal</span>
           </h2>
           <p className="text-sm text-gray-500">

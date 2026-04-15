@@ -18,7 +18,7 @@ const JobDescription = () => {
 
   const isIntiallyApplied =
     singleJob?.applications?.some(
-      (application) => application.applicant == user?._id
+      (application) => application.applicant == user?._id,
     ) || false;
   const [isApplied, setIsApplied] = useState(isIntiallyApplied);
 
@@ -26,13 +26,13 @@ const JobDescription = () => {
     try {
       const res = await axios.get(
         `${APPLICATION_API_END_POINT}/apply/${jobId}`,
-        { withCredentials: true }
+        { withCredentials: true },
       );
       if (res.data.success) {
         setIsApplied(true);
         const updateSingleJob = {
           ...singleJob,
-          applications: [...singleJob.applications, { applicant: user._id }],
+          applications: [...singleJob.applications, { applicant: user?._id }],
         };
         dispatch(setSingleJob(updateSingleJob));
         toast.success(res.data.message);
@@ -53,8 +53,8 @@ const JobDescription = () => {
           dispatch(setSingleJob(res.data.job));
           setIsApplied(
             res.data.job.applications.some(
-              (application) => application.applicant === user?._id
-            )
+              (application) => application.applicant === user?._id,
+            ),
           );
         } else {
           dispatch(setSingleJob(null));
@@ -80,11 +80,12 @@ const JobDescription = () => {
     <div>
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 md:px-8 my-8 md:my-10">
-        
         {/* Header - Title, Badges, Apply Button */}
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">{singleJob?.title}</h1>
+            <h1 className="font-bold text-xl md:text-2xl">
+              {singleJob?.title}
+            </h1>
             <div className="flex flex-wrap items-center gap-2 mt-4">
               <Badge className="text-blue-700 font-bold" variant="outline">
                 {singleJob?.position} Positions
@@ -136,3 +137,21 @@ const JobDescription = () => {
 };
 
 export default JobDescription;
+
+// Page Load
+//    ↓
+// useEffect → API se job data fetch karo
+//    ↓
+// Redux mein store (setSingleJob)
+//    ↓
+// isApplied check → user pehle se apply kiya?
+//    ↓
+// UI render:
+//   → "Apply Now" (purple)   ← nahi kiya
+//   → "Already Applied" (gray) ← kar chuka
+//    ↓
+// Click "Apply Now"
+//    ↓
+// applyJobHandler → API call
+//    ↓
+// Success → Redux update + button gray

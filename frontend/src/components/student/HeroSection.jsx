@@ -33,7 +33,7 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Find the best job opportunities that match your skills and career goals.
         </p>
 
         {/* Search Bar */}
