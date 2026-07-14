@@ -49,23 +49,23 @@ const AppliedJobTable = () => {
               <TableRow key={appliedJob._id} className="hover:bg-gray-50">
                 {/* Date - hidden on mobile */}
                 <TableCell className="hidden sm:table-cell text-sm text-gray-600">
-                  {appliedJob.createdAt.split("T")[0]}
+                  {appliedJob?.createdAt?.split("T")[0] || "N/A"}
                 </TableCell>
 
                 {/* Job Role */}
                 <TableCell className="font-medium">
                   <div>
-                    {appliedJob.job.title}
+                    {appliedJob?.job?.title || "Unknown Job"}
                     {/* Date under title on mobile */}
                     <p className="text-xs text-gray-400 sm:hidden mt-0.5">
-                      {appliedJob.createdAt.split("T")[0]}
+                      {appliedJob?.createdAt?.split("T")[0] || ""}
                     </p>
                   </div>
                 </TableCell>
 
                 {/* Company */}
                 <TableCell className="text-sm text-gray-600">
-                  {appliedJob.job.company.name}
+                  {appliedJob?.job?.company?.name || "Unknown Company"}
                 </TableCell>
 
                 {/* Status */}
